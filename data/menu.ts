@@ -1177,7 +1177,7 @@ export const menus: MenuItem[] = [
       currency: "RM",
       standard: {
         current: "7.90",
-        original: "7.90",
+        original: "7.80",
       },
     },
   },
