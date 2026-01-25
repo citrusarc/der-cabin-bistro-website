@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -7,8 +6,6 @@ import { ArrowUpCircleSolid, ArrowUpRight, ThumbsUp } from "iconoir-react";
 import { menus } from "@/data/menu";
 import { MenuCategory, MenuItem } from "@/types";
 import Modal from "@/components/ui/Modal";
-
-const IMAGE_VERSION = process.env.NEXT_PUBLIC_BUILD_ID || "v1";
 
 export default function ChildHomePage() {
   const menu = menus.filter((item) => !item.status?.isHidden);
@@ -47,14 +44,12 @@ export default function ChildHomePage() {
   useEffect(() => {
     const sentinel = document.querySelector("#category-sentinel");
     if (!sentinel) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsSticky(!entry.isIntersecting);
       },
-      { rootMargin: "-1px 0px 0px 0px", threshold: 0 }
+      { rootMargin: "-1px 0px 0px 0px", threshold: 0 },
     );
-
     observer.observe(sentinel);
     return () => observer.disconnect();
   }, []);
@@ -68,8 +63,9 @@ export default function ChildHomePage() {
       <div className="flex flex-row px-6 py-8 gap-4 w-full items-center rounded-2xl bg-zinc-800">
         <Image
           priority
-          fetchPriority="high"
-          src={`/Images/brand-logo.png?${IMAGE_VERSION}`}
+          quality={85}
+          sizes="72px"
+          src="/Images/brand-logo.png"
           alt="Brand Logo"
           height={72}
           width={72}
@@ -96,9 +92,7 @@ export default function ChildHomePage() {
           </Link>
         </div>
       </div>
-
       <div id="category-sentinel" className="h-0"></div>
-
       <div
         ref={categoryRef}
         className={`sticky top-0 z-50 grid grid-rows-3 grid-flow-col gap-4 text-md sm:text-lg font-semibold overflow-x-auto whitespace-nowrap bg-black/50 backdrop-blur-sm transition-all duration-300 scrollbar-none scrollbar-thumb-transparent scrollbar-track-transparent ${
@@ -119,7 +113,6 @@ export default function ChildHomePage() {
           </button>
         ))}
       </div>
-
       {categories.map((category) => (
         <section
           key={category}
@@ -151,7 +144,6 @@ export default function ChildHomePage() {
                         Discount Off %
                       </p>
                     )}
-
                     {status.isComingSoon && (
                       <p className="absolute top-2 right-0 z-10 px-1 py-0.5 rounded-tl-sm rounded-bl-sm text-sm text-white bg-yellow-600">
                         Coming Soon
@@ -160,11 +152,12 @@ export default function ChildHomePage() {
                     <div className="relative w-24 h-24 aspect-square rounded-xl overflow-hidden flex-shrink-0">
                       <Image
                         fill
-                        priority
-                        fetchPriority="high"
-                        src={`${item.image}?${IMAGE_VERSION}`}
+                        quality={75}
+                        sizes="96px"
+                        src={item.image}
                         alt={item.name}
                         className="object-cover object-center"
+                        loading="lazy"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -197,7 +190,6 @@ export default function ChildHomePage() {
                             )}
                           </div>
                         )}
-
                         {item.price.hot && (
                           <div>
                             <div className="text-sm text-zinc-600">Hot</div>
@@ -215,7 +207,6 @@ export default function ChildHomePage() {
                             </div>
                           </div>
                         )}
-
                         {item.price.cold && (
                           <div>
                             <div className="text-sm text-zinc-600">Cold</div>
@@ -241,16 +232,15 @@ export default function ChildHomePage() {
           </div>
         </section>
       ))}
-
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {selectedItem && (
           <>
             <div className="relative w-full h-fit aspect-square rounded-xl overflow-hidden flex-shrink-0">
               <Image
                 fill
-                priority
-                fetchPriority="high"
-                src={`${selectedItem.image}?${IMAGE_VERSION}`}
+                quality={85}
+                sizes="(max-width: 448px) 100vw, 448px"
+                src={selectedItem.image}
                 alt={selectedItem.name}
                 className="object-cover object-center"
               />
@@ -274,7 +264,6 @@ export default function ChildHomePage() {
                   Discount Off %
                 </p>
               )}
-
               <div className="flex flex-row gap-4">
                 {selectedItem.price.standard && (
                   <div className="flex items-center gap-2 text-lg font-medium text-yellow-500">
@@ -293,7 +282,6 @@ export default function ChildHomePage() {
                     )}
                   </div>
                 )}
-
                 {selectedItem.price.hot && (
                   <div>
                     <div className="text-sm text-zinc-600">Hot</div>
@@ -311,7 +299,6 @@ export default function ChildHomePage() {
                     </div>
                   </div>
                 )}
-
                 {selectedItem.price.cold && (
                   <div>
                     <div className="text-sm text-zinc-600">Cold</div>
@@ -340,7 +327,6 @@ export default function ChildHomePage() {
           </>
         )}
       </Modal>
-
       {showScrollTop && (
         <button onClick={scrollToTop}>
           <ArrowUpCircleSolid className="fixed bottom-32 right-6 w-14 h-14 shadow-lg hover:cursor-pointer text-yellow-500/50" />
