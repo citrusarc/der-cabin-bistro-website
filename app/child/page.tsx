@@ -31,11 +31,7 @@ export default function ChildHomePage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
+      setShowScrollTop(window.scrollY > 200);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -328,7 +324,7 @@ export default function ChildHomePage() {
         )}
       </Modal>
       {showScrollTop && (
-        <button onClick={scrollToTop}>
+        <button aria-label="Scroll to top" onClick={scrollToTop}>
           <ArrowUpCircleSolid className="fixed bottom-32 right-6 w-14 h-14 shadow-lg hover:cursor-pointer text-yellow-500/50" />
         </button>
       )}

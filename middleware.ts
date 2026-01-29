@@ -3,7 +3,6 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
-
   const botPatterns = [
     /bot/i,
     /crawler/i,
@@ -16,9 +15,7 @@ export function middleware(request: NextRequest) {
     /scrapy/i,
     /axios/i,
   ];
-
   const isBot = botPatterns.some((pattern) => pattern.test(userAgent));
-
   if (isBot) {
     const allowedBots =
       /googlebot|bingbot|yahoo|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot/i;
@@ -26,7 +23,6 @@ export function middleware(request: NextRequest) {
       return new NextResponse("Forbidden", { status: 403 });
     }
   }
-
   return NextResponse.next();
 }
 

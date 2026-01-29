@@ -26,14 +26,16 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return (
     <div
-      className="fixed flex inset-0 z-50 p-4 items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
       onClick={onClose}
+      className="fixed flex inset-0 z-50 p-4 items-center justify-center"
     >
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-
       <div
-        className="relative flex flex-col p-4 gap-4 max-w-sm w-full items-start justify-start text-start shadow-lg rounded-2xl bg-zinc-800"
         onClick={(e) => e.stopPropagation()}
+        className="relative flex flex-col p-4 gap-4 max-w-sm w-full items-start justify-start text-start shadow-lg rounded-2xl bg-zinc-800"
       >
         {children}
       </div>

@@ -97,7 +97,6 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-GNCGTWT87Q"
           strategy="afterInteractive"
         />
-
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
