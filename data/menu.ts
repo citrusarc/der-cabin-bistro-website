@@ -50,8 +50,17 @@ export const menus: MenuItem[] = [
   // Starters
   {
     id: "starters-1",
-    name: "Fries",
+    name: "Grilled Jumbo Sausage",
     image: "/Images/starters-1.jpg",
+    description: "A juicy jumbo sausage grilled to perfection and served hot.",
+    category: "Starters",
+    price: { currency: "RM", standard: { current: "4.90", original: "4.90" } },
+    status: { ...defaultStatus },
+  },
+  {
+    id: "starters-2",
+    name: "Fries",
+    image: "/Images/starters-2.jpg",
     description:
       "Crispy golden potato fries, lightly salted for the perfect crunch with every bite.",
     category: "Starters",
@@ -59,9 +68,9 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-2",
+    id: "starters-3",
     name: "Onion Ring",
-    image: "/Images/starters-2.jpg",
+    image: "/Images/starters-3.jpg",
     description:
       "Thick-cut onion rings coated in a crispy golden batter, perfectly fried and served hot with rich marinara sauce for the perfect bite.",
     category: "Starters",
@@ -75,9 +84,9 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-3",
+    id: "starters-4",
     name: "Creamed Mash Potatoes",
-    image: "/Images/starters-3.jpg",
+    image: "/Images/starters-4.jpg",
     description:
       "Smooth and buttery mashed potatoes whipped to a creamy texture, served warm with rich and flavorful Rax sauce for the perfect comforting side dish.",
     category: "Starters",
@@ -91,9 +100,9 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-4",
+    id: "starters-5",
     name: "Homemade Mushroom Soup",
-    image: "/Images/starters-4.jpg",
+    image: "/Images/starters-5.jpg",
     description:
       "Rich and creamy mushroom soup made from fresh mushrooms, slow-cooked to bring out their earthy flavor. Served warm with a slice of toasted bread for the perfect comforting start to your meal.",
     category: "Starters",
@@ -107,9 +116,9 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-5",
+    id: "starters-6",
     name: "Mozzarella Sticks",
-    image: "/Images/starters-5.jpg",
+    image: "/Images/starters-6.jpg",
     description:
       "Enjoy 5 pieces of crispy, golden-fried mozzarella sticks. Crunchy on the outside and perfectly gooey inside. Served hot with your choice of dipping sauce.",
     category: "Starters",
@@ -123,9 +132,9 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-6",
+    id: "starters-7",
     name: "Nachos with Beef Con Carne",
-    image: "/Images/starters-6.jpg",
+    image: "/Images/starters-7.jpg",
     description:
       "Crisp tortilla chips topped with savoury beef con carne and nachos cheese drizzle.",
     category: "Starters",
@@ -139,10 +148,10 @@ export const menus: MenuItem[] = [
     status: { ...defaultStatus },
   },
   {
-    id: "starters-7",
+    id: "starters-8",
     name: "Buffalo Chicken Wing",
     label: "(5 pcs)",
-    image: "/Images/starters-7.jpg",
+    image: "/Images/starters-8.jpg",
     description: "Sweet & spicy chicken wings with creamy garlic sauce.",
     category: "Starters",
     price: {
@@ -276,16 +285,15 @@ export const menus: MenuItem[] = [
     label: "(6 pcs)",
     image: "/Images/chicken-2.jpg",
     description:
-      "Enjoy 6 pieces of tender chicken breast coated with crispy breadcrumbs and deep-fried to golden perfection. Served with rich black pepper sauce, accompanied by fries and coleslaw for an extra hearty and satisfying meal.",
+      "Extra large crispy fried Chicken Chop served with black pepper sauce, paired with golden fries and creamy coleslaw.",
     category: "Chicken Feast",
     price: {
       currency: "RM",
       standard: {
-        current: "16.90",
-        original: "16.90",
+        current: "19.90",
+        original: "19.90",
       },
     },
-    status: { isHidden: true },
   },
   {
     id: "chicken-3",
@@ -334,8 +342,23 @@ export const menus: MenuItem[] = [
   },
   {
     id: "chicken-6",
-    name: "Cheesy Chicken Ball",
+    name: "Mash Der Ball",
     image: "/Images/chicken-6.jpg",
+    description:
+      "A hearty combo of flavorful meatballs and crispy fried chicken fillet, paired with smooth mashed potatoes and finished with rich black pepper sauce.",
+    category: "Chicken Feast",
+    price: {
+      currency: "RM",
+      standard: {
+        current: "11.90",
+        original: "11.90",
+      },
+    },
+  },
+  {
+    id: "chicken-7",
+    name: "Cheesy Chicken Ball",
+    image: "/Images/chicken-7.jpg",
     description:
       "Crispy on the outside, juicy chicken on the inside, with melted cheese at the center for that perfect bite-sized delight.",
     category: "Chicken Feast",
@@ -488,8 +511,23 @@ export const menus: MenuItem[] = [
   },
   {
     id: "pasta-8",
-    name: "Meatball Pasta",
+    name: "Beef Bolognese Pasta",
     image: "/Images/pasta-8.jpg",
+    description:
+      "Perfectly cooked pasta coated in a hearty Beef Bolognese sauce, finished with stretchy melted mozzarella for the ultimate comfort meal.",
+    category: "Pasta",
+    price: {
+      currency: "RM",
+      standard: {
+        current: "19.90",
+        original: "19.90",
+      },
+    },
+  },
+  {
+    id: "pasta-9",
+    name: "Meatball Pasta",
+    image: "/Images/pasta-9.jpg",
     description: "Pasta served with beef meatballs in rich tomato sauce.",
     category: "Pasta",
     price: {
@@ -501,9 +539,9 @@ export const menus: MenuItem[] = [
     },
   },
   {
-    id: "pasta-9",
+    id: "pasta-10",
     name: "Mac ‘N’ Cheese (Chicken Thigh)",
-    image: "/Images/pasta-9.jpg",
+    image: "/Images/pasta-10.jpg",
     description:
       "Creamy macaroni and cheese topped with tender, juicy chicken thigh pieces.",
     category: "Pasta",
@@ -518,7 +556,7 @@ export const menus: MenuItem[] = [
   {
     id: "pasta-10",
     name: "Mac ‘N’ Cheese (Shrimp)",
-    image: "/Images/pasta-10.jpg",
+    image: "/Images/pasta-11.jpg",
     description:
       "Creamy macaroni and cheese topped with tender, succulent shrimp.",
     category: "Pasta",
