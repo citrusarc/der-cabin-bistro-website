@@ -22,8 +22,8 @@ export const menus: MenuItem[] = [
     price: {
       currency: "RM",
       standard: {
-        current: "29.90",
-        original: "29.90",
+        current: "26.90",
+        original: "26.90",
       },
     },
     status: { ...defaultStatus },
@@ -274,8 +274,8 @@ export const menus: MenuItem[] = [
     price: {
       currency: "RM",
       standard: {
-        current: "10.90",
-        original: "10.90",
+        current: "9.90",
+        original: "9.90",
       },
     },
   },
@@ -290,8 +290,8 @@ export const menus: MenuItem[] = [
     price: {
       currency: "RM",
       standard: {
-        current: "19.90",
-        original: "19.90",
+        current: "15.90",
+        original: "15.90",
       },
     },
   },
@@ -320,8 +320,8 @@ export const menus: MenuItem[] = [
     price: {
       currency: "RM",
       standard: {
-        current: "15.90",
-        original: "15.90",
+        current: "13.90",
+        original: "13.90",
       },
     },
   },
