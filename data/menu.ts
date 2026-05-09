@@ -274,8 +274,8 @@ export const menus: MenuItem[] = [
     price: {
       currency: "RM",
       standard: {
-        current: "9.90",
-        original: "9.90",
+        current: "8.90",
+        original: "8.90",
       },
     },
   },
